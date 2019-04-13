@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Zones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Zone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_zones.each do |admin_zone| %>
+      <tr>
+        <td><%= admin_zone.user %></td>
+        <td><%= admin_zone.zone %></td>
+        <td><%= link_to 'Show', admin_zone %></td>
+        <td><%= link_to 'Edit', edit_admin_zone_path(admin_zone) %></td>
+        <td><%= link_to 'Destroy', admin_zone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Zone', new_admin_zone_path %>

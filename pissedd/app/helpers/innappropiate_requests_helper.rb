@@ -1,0 +1,2 @@
+module InnappropiateRequestsHelper
+end
