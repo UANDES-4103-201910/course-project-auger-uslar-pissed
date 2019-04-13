@@ -9,7 +9,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :gps_location
       t.string :image
       t.string :file_atachment
-      t.boolen :open
+      t.boolean :open
       t.boolean :solved
       t.integer :innapropiated_count
       t.boolean :in_dumpster

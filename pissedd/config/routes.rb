@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'static_pages/home'
+  root to:'static_pages#home'
+
   resources :admin_zones
   resources :innappropiate_requests
   resources :votes
@@ -6,5 +10,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :zones
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
 end
