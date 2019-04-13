@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :zone
+  has_many :post
   validates :user_type, inclusion: {in: %w(User Administrator Super_administrator)} 
   validates :email_address, format: { with: URI::MailTo::EMAIL_REGEXP } 
   validates :password, length: {in: 8..12} 

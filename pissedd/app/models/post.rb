@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  belongs_to :user
+  belongs_to :zone
   validates :description, length: {in 15..400}
   validates :city, format: {with: /\A[a-zA-Z]+\z/}
   validates :country, format: {with: /\A[a-zA-Z]+\z/}

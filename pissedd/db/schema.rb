@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_022143) do
+ActiveRecord::Schema.define(version: 2019_04_13_033239) do
 
   create_table "admin_zones", force: :cascade do |t|
     t.integer "user_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_022143) do
     t.integer "zone_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["zone_id"], name: "index_users_on_zone_id"
   end
 
