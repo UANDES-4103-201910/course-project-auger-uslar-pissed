@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Down or up vote:</strong>
+  <%= @vote.down_or_up_vote %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @vote.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vote.user %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @vote.post %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @vote.comment %>
+</p>
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>

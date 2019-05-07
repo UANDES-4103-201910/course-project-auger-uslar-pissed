@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p>
+  <strong>Up vote amount:</strong>
+  <%= @post.up_vote_amount %>
+</p>
+
+<p>
+  <strong>Down vote amount:</strong>
+  <%= @post.down_vote_amount %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @post.date %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @post.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @post.country %>
+</p>
+
+<p>
+  <strong>Gps location:</strong>
+  <%= @post.gps_location %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @post.image %>
+</p>
+
+<p>
+  <strong>File atachment:</strong>
+  <%= @post.file_atachment %>
+</p>
+
+<p>
+  <strong>Open:</strong>
+  <%= @post.open %>
+</p>
+
+<p>
+  <strong>Solved:</strong>
+  <%= @post.solved %>
+</p>
+
+<p>
+  <strong>Innapropiated count:</strong>
+  <%= @post.innapropiated_count %>
+</p>
+
+<p>
+  <strong>In dumpster:</strong>
+  <%= @post.in_dumpster %>
+</p>
+
+<p>
+  <strong>Is hidden:</strong>
+  <%= @post.is_hidden %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @post.zone %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

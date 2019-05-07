@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  down_or_up_vote: false
+  date: 2019-04-19
+  user: one
+  post: one
+  comment: one
+
+two:
+  down_or_up_vote: false
+  date: 2019-04-19
+  user: two
+  post: two
+  comment: two

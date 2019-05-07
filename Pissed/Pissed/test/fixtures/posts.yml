@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  up_vote_amount: 1
+  down_vote_amount: 1
+  date: 2019-04-19
+  city: MyString
+  country: MyString
+  gps_location: 1
+  image: MyString
+  file_atachment: MyString
+  open: false
+  solved: false
+  innapropiated_count: 1
+  in_dumpster: false
+  is_hidden: false
+  user: one
+  zone: one
+
+two:
+  title: MyString
+  description: MyText
+  up_vote_amount: 1
+  down_vote_amount: 1
+  date: 2019-04-19
+  city: MyString
+  country: MyString
+  gps_location: 1
+  image: MyString
+  file_atachment: MyString
+  open: false
+  solved: false
+  innapropiated_count: 1
+  in_dumpster: false
+  is_hidden: false
+  user: two
+  zone: two
