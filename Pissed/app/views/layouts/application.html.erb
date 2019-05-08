@@ -10,14 +10,14 @@
   </head>
 
 <body>
+	
 
     <div class="container">
       <header class="blog-header py-2">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-2 text-center">
             <a class="blog-header-logo text-dark" href="#">
-	    
-	    <h2 style="font-family: sans-serif"><b>Pissed</b></h2>
+	    <h2>Pissed</h2>
 	   </a>
           </div>
           <form class="form-inline my-2 my-lg-0">
@@ -29,10 +29,10 @@
 
       <div class="nav-scroller py-1 mb-2">
 	<nav class="nav d-flex justify-content-between">
-        <a class="nav-link" href="../mainpage/home.html.erb">Home</a>
+        <a class="nav-link" href="main_page/home">Home</a>
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">New User</a>
+          <a class="dropdown-item" href="user_profile/main">New User</a>
           <a class="dropdown-item" href="#">View User</a>
           <a class="dropdown-item" href="#">Edit User</a>
 	  <a class="dropdown-item" href="#">Delete User</a>
@@ -43,29 +43,21 @@
           <a class="dropdown-item" href="#">View Oldest Post</a>
           <a class="dropdown-item" href="#">Delete a Post</a>
         </div>
-        <a class="nav-link" href="../mainpage/home.html.erb">Comment Threads</a>
+        <a class="nav-link" href="#">Comment Threads</a>
         <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
         <div class="dropdown-menu" aria-labelledby="dropdown03">
           <a class="dropdown-item" href="#">Provide AUP and TOS document</a>
           <a class="dropdown-item" href="#">Report abussive content</a>
         </div>
-        <a class="nav-link" href="../mainpage/home.html.erb">About Us</a>
-        <a class="nav-link" href="../mainpage/home.html.erb">Contact</a>
+        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="#">Contact</a>
 	</nav>
       </div>
 
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-      	<div class="row">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Welcome to Pissed!</h1>
-	  <h2 class="display-7 font-italic">your platform to complain about the problems of the city.</h2>
-          <p class="lead my-3">Here you will find a community of people who lived in diferents cities arround the country, where you can 				       complain about the multiples problem of the daily life.</p>
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-        </div>
-	<div class="col-md-6 px-0"> 
-        	<img src="/appimages/angry-mob.jpg" class="img-thumbnail">
-        </div>
-      </div>
+	<div>
+      	<%=yield%>
+	</div>
       </div>
 <footer class="blog-footer">
       <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
@@ -88,6 +80,6 @@
         fg: '#eceeef',
         text: 'Thumbnail'
       });
-   </script>
+    </script>
   </body>
 </html>
