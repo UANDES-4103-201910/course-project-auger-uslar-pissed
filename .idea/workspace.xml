@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7b482cd-26d7-4be0-99bf-564e56c20774" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Pissed/app/assets/javascripts/user_profile.coffee" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Pissed/app/assets/stylesheets/user_profile.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Pissed/app/controllers/user_profile_controller.rb" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Pissed/app/helpers/user_profile_helper.rb" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Pissed/app/views/user_profile/main.html.erb" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Pissed/public/appimages/ProfileBlank.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Pissed/test/controllers/user_profile_controller_test.rb" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Pissed/app/assets/stylesheets/scaffolds.scss" afterPath="$PROJECT_DIR$/Pissed/app/assets/stylesheets/scaffolds.scss" />
       <change beforePath="$PROJECT_DIR$/Pissed/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/Pissed/app/views/layouts/application.html.erb" />
+      <change beforePath="$PROJECT_DIR$/Pissed/app/views/mainpage/home.html.erb" afterPath="$PROJECT_DIR$/Pissed/app/views/mainpage/home.html.erb" />
       <change beforePath="$PROJECT_DIR$/Pissed/config/routes.rb" afterPath="$PROJECT_DIR$/Pissed/config/routes.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +24,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pissed/app/views/registration/main.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
@@ -27,8 +37,18 @@
       <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pissed/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-623">
-              <caret line="7" column="55" lean-forward="false" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+            <state relative-caret-position="511">
+              <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pissed/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -52,9 +72,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Pissed/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/Pissed/app/assets/stylesheets/registration.scss" />
         <option value="$PROJECT_DIR$/Pissed/app/views/registration/main.html.erb" />
+        <option value="$PROJECT_DIR$/Pissed/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/Pissed/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -70,7 +91,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="292" />
     <option name="y" value="44" />
     <option name="width" value="1400" />
@@ -149,6 +170,12 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="course-project-auger-uslar-pissed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-project-auger-uslar-pissed" type="462c0819:PsiDirectoryNode" />
+              <item name="Pissed" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -186,15 +213,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557331458803</updated>
-      <workItem from="1557331460038" duration="8279000" />
+      <workItem from="1557331460038" duration="8823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8279000" />
+    <option name="totallyTimeSpent" value="8823000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="292" y="44" width="1400" height="850" extended-state="1" />
+    <frame x="292" y="44" width="1400" height="850" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -236,18 +263,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pissed/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-623">
-          <caret line="7" column="55" lean-forward="false" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pissed/app/views/registration/main.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="79" column="18" lean-forward="false" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pissed/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pissed/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
           <folding />
         </state>
       </provider>

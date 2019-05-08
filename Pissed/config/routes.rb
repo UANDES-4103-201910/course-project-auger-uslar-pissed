@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   get 'registration/main'
+  get 'user_profile/main'
+
   get 'mainpage/home'
   root to: 'mainpage#home'
   resources :admin_zones
