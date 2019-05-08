@@ -1,2 +1,0 @@
-Jaime Auger
-Cristobal Uslar
