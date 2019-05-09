@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'login/main'
   get 'registration/main'
   get 'user_profile/main'
 
