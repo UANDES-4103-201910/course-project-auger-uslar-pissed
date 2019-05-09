@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'policyandservices/documents'
+  get 'policyandservices/abusivecontent'
   get 'login/main'
   get 'registration/main'
   get 'user_profile/main'
