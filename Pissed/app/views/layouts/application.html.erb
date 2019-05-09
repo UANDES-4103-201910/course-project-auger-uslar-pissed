@@ -15,15 +15,15 @@
     <div class="container">
       <header class="blog-header py-2">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-2 text-center">
+          <div class="col-1 text-center">
             <a class="blog-header-logo text-dark" href="#">
 	    <h2>Pissed</h2>
 	   </a>
           </div>
-          <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+	  <div class="col-8 text-right">
+          <a class="btn btn-light" href="../login/main">Sign in</a>
+	  <a class="btn btn-light" href="../registration/main">Sign up</a>
+	  </div>
         </div>
       </header>
 
@@ -33,7 +33,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="../registration/main">New User</a>
-          <a class="dropdown-item" href="../user_profile/main">View User</a>
+          <a class="dropdown-item" href="../users/show/1">View User</a>
           <a class="dropdown-item" href="#">Edit User</a>
 	  <a class="dropdown-item" href="#">Delete User</a>
         </div>
@@ -49,8 +49,10 @@
           <a class="dropdown-item" href="#">Provide AUP and TOS document</a>
           <a class="dropdown-item" href="#">Report abussive content</a>
         </div>
-        <a class="nav-link" href="#">About Us</a>
-        <a class="nav-link" href="#">Contact</a>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
 	</nav>
       </div>
 
