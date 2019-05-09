@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'login/changepassword'
   get 'login/recoverpassword'
+  get 'login/logout'
   get 'policyandservices/documents'
   get 'policyandservices/abusivecontent'
   get 'login/main'
