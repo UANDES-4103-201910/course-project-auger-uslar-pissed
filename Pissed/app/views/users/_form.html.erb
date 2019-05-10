@@ -1,87 +1,124 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <%= form_with(model: user, local: true) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :user_type %>
-    <%= form.text_field :user_type %>
-  </div>
+    <!-- Desde aqui el formulario -->
+      <div class="text-center">
+        <h2>Registration</h2>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6 px-0">
+            <div class="form-group">
+              <label for="firstName" class="col-sm-3 control-label upperlabel">First Name:</label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :name %>
+                </a>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="col-sm-3 control-label upperlabel">Last Name:</label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :lastname %>
+                </a>
+              </a>
+            </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+            <div class="form-group">
+              <label for="password" class="col-sm-3 control-label upperlabel">Password*:</label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :password %>
+                </a>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-sm-3 control-label upperlabel">Confirm Password*:</label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :password %>
+                </a>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-3 control-label upperlabel">Email*: </label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :email_address %>
+                </a>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="Country" class="col-sm-3 control-label upperlabel">Country*:</label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :country %>
+                </a>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="City" class="col-sm-3 control-label upperlabel">City*:</label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :city %>
+                </a>
+              </a>
+            </div>
 
-  <div class="field">
-    <%= form.label :lastname %>
-    <%= form.text_field :lastname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email_address %>
-    <%= form.text_field :email_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.text_field :picture %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bio %>
-    <%= form.text_area :bio %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gps_location %>
-    <%= form.number_field :gps_location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= form.label :in_blacklist %>
-    <%= form.check_box :in_blacklist %>
-  </div>
-
-  <div class="field">
-    <%= form.label :suspended %>
-    <%= form.check_box :suspended %>
-  </div>
-
-  <div class="field">
-    <%= form.label :previously_suspension %>
-    <%= form.number_field :previously_suspension %>
-  </div>
-
-  <div class="field">
-    <%= form.label :zone_id %>
-    <%= form.text_field :zone_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+          </div>
+          <div class="col-md-6 px-0">
+            <div class="form-group">
+              <label for="user_type" class="col-sm-3 control-label upperlabel">User Type*: </label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :user_type %>
+                </a>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="Biography" class="col-sm-3 control-label upperlabel">Biography*: </label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :bio %>
+                </a>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="Profile Picture" class="col-sm-3 control-label upperlabel">Profile Picture: </label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :picture %>
+                </a>
+              </a>
+              <a>
+                <button type="submit" class="btn btn-primary btn-sm">Browse...</button>
+              </a>
+            </div>
+            <div class="form-group">
+              <label for="Zone_id" class="col-sm-3 control-label upperlabel">Zone_id*: </label>
+              <a class="col-sm-9">
+                <a class="field">
+                  <%= form.text_field :zone_id %>
+                </a>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="text-center">
+          <%= form.submit %>
+          </div>
+        </div>
+        <% end %>

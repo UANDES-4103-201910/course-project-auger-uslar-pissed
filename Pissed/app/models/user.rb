@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :bio, length: {in: 15..200}
   validates :city, format: {with: /\A[a-zA-Z]+\z/}
   validates :country, format: {with: /\A[a-zA-Z]+\z/}
-  validates :user_type, :name, :lastname, :email_address, :password, :city, :country, :in_blacklist, :suspended, :previously_suspension, presence: true
+  validates :user_type, :name, :lastname, :email_address, :password, :city, :country, presence: true
 
 
 end
