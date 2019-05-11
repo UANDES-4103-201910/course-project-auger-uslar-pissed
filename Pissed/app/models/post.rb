@@ -6,10 +6,10 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :innappropiate_requests
   
-  validates :title, format: {with: /\A[a-zA-Z]+\z/}, length: {in 5..60}
-  validates :description, length: {in 15..400}
+  validates :title, format: {with: /\A[a-zA-Z]+\z/}, length: {in: 5..60}
+  validates :description, length: {in: 15..400}
   validates :city, format: {with: /\A[a-zA-Z]+\z/}
   validates :country, format: {with: /\A[a-zA-Z]+\z/}
-  validates :title, :description, :date, :city, :country, :open, :solved, :innapropiated_count, :in_dumpster, :is_hidden, presence: true
+  validates :title, :description, :date, :city, :country, presence: true
 
 end

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'search/author'
+  get 'search/post'
+  get 'black_list/main'
+  get 'black_list/recover'
+  get 'black_list/delete'
+  get 'dumpster/main'
+  get 'dumpster/recover'
+  get 'dumpster/delete'
   get 'login/changepassword'
   get 'login/recoverpassword'
   get 'login/logout'

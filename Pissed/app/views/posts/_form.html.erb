@@ -10,93 +10,90 @@
       </ul>
     </div>
   <% end %>
+<br>
+<br>
+  <div class="row">
+      <div class="col-md-6 px-0">
+        <div class="form-group">
+          <label for="title" class="col-sm-3 control-label upperlabel">Post title:</label>
+          <a class="col-sm-9">
+            <a class="field">
+              <%= form.text_field :title %>
+            </a>
+          </a>
+        </div>
+        <div class="form-group">
+          <label for="City" class="col-sm-3 control-label upperlabel">City:</label>
+          <a class="col-sm-9">
+            <a class="field">
+              <%= form.text_field :city %>
+            </a>
+          </a>
+        </div>
+        <div class="form-group">
+          <label for="Country" class="col-sm-3 control-label upperlabel">Country:</label>
+          <a class="col-sm-9">
+            <a class="field">
+              <%= form.text_field :country %>
+            </a>
+          </a>
+        </div>
+        <div class="form-group">
+          <label for="Post picture" class="col-sm-3 control-label upperlabel">Post picture:</label>
+          <a class="col-sm-2">
+            <a class="field">
+              <%= form.text_field :image %>
+            </a>
+          </a>
+        </div>
+        <div class="form-group">
+          <label for="User ID" class="col-sm-3 control-label upperlabel">User ID:</label>
+          <a class="col-sm-2">
+            <a class="field">
+              <%= form.text_field :user_id %>
+            </a>
+          </a>
+        </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :up_vote_amount %>
-    <%= form.number_field :up_vote_amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :down_vote_amount %>
-    <%= form.number_field :down_vote_amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gps_location %>
-    <%= form.number_field :gps_location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :file_atachment %>
-    <%= form.text_field :file_atachment %>
-  </div>
-
-  <div class="field">
-    <%= form.label :open %>
-    <%= form.check_box :open %>
-  </div>
-
-  <div class="field">
-    <%= form.label :solved %>
-    <%= form.check_box :solved %>
-  </div>
-
-  <div class="field">
-    <%= form.label :innapropiated_count %>
-    <%= form.number_field :innapropiated_count %>
-  </div>
-
-  <div class="field">
-    <%= form.label :in_dumpster %>
-    <%= form.check_box :in_dumpster %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_hidden %>
-    <%= form.check_box :is_hidden %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :zone_id %>
-    <%= form.text_field :zone_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="col-md-6 px-0">
+      <div class="form-group">
+        <label for="GPS L]location" class="col-sm-3 control-label upperlabel">GPS location:</label>
+        <a class="col-sm-9">
+          <a class="field">
+          <%= form.number_field :gps_location %>
+          </a>
+        </a>
+      </div>
+      <div class="form-group">
+        <label for="City" class="col-sm-3 control-label upperlabel">Date:</label>
+        <a class="col-sm-9">
+          <a class="field">
+            <%= form.date_select :date %>
+          </a>
+        </a>
+      </div>
+      <div class="form-group">
+        <label for="Description" class="col-sm-3 control-label upperlabel">Description:</label>
+        <a class="col-sm-9">
+          <a class="field">
+              <%= form.text_area :description %>
+          </a>
+        </a>
+      </div>
+      <div class="form-group">
+        <label for="Country" class="col-sm-3 control-label upperlabel">Zone ID:</label>
+        <a class="col-sm-9">
+          <a class="field">
+              <%= form.text_field :zone_id %>
+          </a>
+        </a>
+      </div>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="text-center">
+          <%= form.submit %>
+          </div>
+        </div>
+        <% end %>
