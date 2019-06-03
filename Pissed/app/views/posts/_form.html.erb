@@ -38,22 +38,11 @@
             </a>
           </a>
         </div>
-        <div class="form-group">
-          <label for="Post picture" class="col-sm-3 control-label upperlabel">Post picture:</label>
-          <a class="col-sm-2">
-            <a class="field">
-              <%= form.text_field :image %>
-            </a>
-          </a>
-        </div>
-        <div class="form-group">
-          <label for="User ID" class="col-sm-3 control-label upperlabel">User ID:</label>
-          <a class="col-sm-2">
-            <a class="field">
-              <%= form.text_field :user_id %>
-            </a>
-          </a>
-        </div>
+
+        <div class="field text-black-50">
+          <%= form.label "Post picture" %><br/>
+          <%= form.file_field :avatar %></div>
+
         </div>
 
     <div class="col-md-6 px-0">
@@ -93,6 +82,7 @@
         </div>
         <div class="actions">
           <div class="text-center">
+
           <%= form.submit %>
           </div>
         </div>

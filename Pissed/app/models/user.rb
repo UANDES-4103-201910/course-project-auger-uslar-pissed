@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   belongs_to :zone
   has_one :admin_zone
@@ -6,17 +10,16 @@ class User < ApplicationRecord
   has_many :comments
   has_many :votes
   has_many :innappropiate_requests
+  has_one_attached :avatar
 
   validates :name, format: {with: /\A[a-zA-Z]+\z/}
   validates :lastname, format: {with: /\A[a-zA-Z]+\z/}
-  validates :user_type, inclusion: {in: %w(User Administrator Super_administrator)}
-  validates :email_address, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, length: {in: 8..12}
-  validates :password, format: { with: /\A[a-z0-9A-Z]+\z/, message: "only allows alphanumeric characters" }
-  validates :bio, length: {in: 15..200}
+  validates :bio, length: {in: 15..500}
   validates :city, format: {with: /\A[a-zA-Z]+\z/}
   validates :country, format: {with: /\A[a-zA-Z]+\z/}
-  validates :user_type, :name, :lastname, :email_address, :password, :city, :country, presence: true
+  validates :name, :lastname, :city, :country, presence: true
 
-
+ after_initialize do
+   self.user_type ||= "User"
+ end
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'search/author'
   get 'search/post'
   get 'black_list/main'
@@ -22,9 +23,9 @@ Rails.application.routes.draw do
   resources :admin_zones
   resources :innappropiate_requests
   resources :votes
+  resources :users
   resources :comments
   resources :posts
-  resources :users
   resources :zones
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

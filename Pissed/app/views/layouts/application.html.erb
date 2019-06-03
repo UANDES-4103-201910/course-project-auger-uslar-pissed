@@ -21,23 +21,31 @@
 	   </a>
           </div>
 	  <div class="col-8 text-right">
-          <a class="btn btn-light" href="../login/main">Sign in</a>
-	  <a class="btn btn-light" href="../registration/main">Sign up</a>
+      <% if user_signed_in? %>
+    <a class="btn btn-light" <%= link_to 'Edit Profile',edit_user_registration_path %> </a>
+    <a class="btn btn-light" <%= link_to "Log Out", destroy_user_session_path, method: :delete %> </a>
+      <% else %>
+    <a class="btn btn-light" <%= link_to "Sign In", new_user_session_path %> </a>
+	  <a class="btn btn-light" <%= link_to "Sign Up", new_user_registration_path %> </a>
+     <% end %>
 	  </div>
         </div>
       </header>
 
       <div class="nav-scroller py-1 mb-2">
-	<nav class="nav d-flex justify-content-between">
-        <li><a class="nav-link" href="../mainpage/home">Home</a></li>
+	<nav class="nav d-flex justify-content-between container">
+
+        <% if user_signed_in? %>
+        <% if current_user.user_type == "Admin" %>
+        <nav class="nav d-flex justify-content-between container">
+          <li><a class="nav-link" href="../mainpage/home">Home</a></li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="../users/new">New User</a>
-          <a class="dropdown-item" href="../users/1">View User</a>
-          <a class="dropdown-item" href="../users/1/edit">Edit User</a>
-          <a class="dropdown-item" href="../dumpster/main">View Dumpster</a>
-          <a class="dropdown-item" href="../black_list/main">View Black List</a>
-	  <a class="dropdown-item" href="#">Delete User</a>
+          <a class="dropdown-item" <%= link_to "New User", new_user_registration_path %></a>
+          <a class="dropdown-item" <%= link_to "View Users", users_path %></a>
+          <a class="dropdown-item" <%= link_to "Dumpster", dumpster_main_path %> </a>
+          <a class="dropdown-item" <%= link_to "Black List", black_list_main_path %></a>
+
         </div>
         </li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
@@ -60,11 +68,111 @@
           <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
 
         </form>
-	</nav>
+  </nav>
+          <% elsif current_user.user_type == "Superadmin" %>
+          <nav class="nav d-flex justify-content-between container">
+            <li><a class="nav-link" href="../mainpage/home">Home</a></li>
+          <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SuperAdmin</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" <%= link_to "New User", new_user_registration_path %></a>
+            <a class="dropdown-item" <%= link_to "View Users", users_path %></a>
+            <a class="dropdown-item" <%= link_to "Dumpster", dumpster_main_path %> </a>
+            <a class="dropdown-item" <%= link_to "Black List", black_list_main_path %></a>
+
+          </div>
+          </li>
+          <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="../posts/new">New Post</a>
+            <a class="dropdown-item" href="../posts/3">View Newest Post</a>
+            <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
+            <a class="dropdown-item" href="#">Delete a Post</a>
+          </div>
+          </li>
+          <li><a class="nav-link" href="#">Comment Threads</a></li>
+          <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
+            <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
+          </div>
+          </li>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
+
+          </form>
+    </nav>
+
+          <% else %>
+          <nav class="nav d-flex justify-content-between container">
+                <li><a class="nav-link" href="../mainpage/home">Home</a></li>
+        <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" <%= link_to "Show Profile", current_user %></a>
+          <a class="dropdown-item" <%= link_to "Edit User", edit_user_registration_path %> </a>
+        </div>
+        </li>
+        <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="../posts/new">New Post</a>
+          <a class="dropdown-item" href="../posts/3">View Newest Post</a>
+          <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
+          <a class="dropdown-item" href="#">Delete a Post</a>
+        </div>
+        </li>
+        <li><a class="nav-link" href="#">Comment Threads</a></li>
+        <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown03">
+          <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
+          <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
+        </div>
+        </li>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
+
+        </form>
+  </nav>
+          <% end %>
+
+          <% else %>
+          <div class="nav-scroller py-1 mb-2">
+    	<nav class="nav d-flex justify-content-between container">
+            <li><a class="nav-link" href="../mainpage/home">Home</a></li>
+        </div>
+        <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="../posts/new">New Post</a>
+          <a class="dropdown-item" href="../posts/3">View Newest Post</a>
+          <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
+          <a class="dropdown-item" href="#">Delete a Post</a>
+        </div>
+        </li>
+        <li><a class="nav-link" href="#">Comment Threads</a></li>
+        <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown03">
+          <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
+          <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
+        </div>
+        </li>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
+
+        </form>
+  </nav>
+
+          <% end %>
+
+
       </div>
 
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
 	<div>
+    <div class="container">
+      <% if notice %><div class="alert alert-info"> <%= notice %></div><% end %>
+      <% if alert %><div class="alert alert-warning"> <%= alert %></div><% end %>
+
       	<%=yield%>
 	</div>
       </div>

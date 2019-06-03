@@ -34,31 +34,7 @@
             </div>
 
             <div class="form-group">
-              <label for="password" class="col-sm-3 control-label upperlabel">Password*:</label>
-              <a class="col-sm-9">
-                <a class="field">
-                  <%= form.text_field :password %>
-                </a>
-              </a>
-            </div>
-            <div class="form-group">
-              <label for="password" class="col-sm-3 control-label upperlabel">Confirm Password*:</label>
-              <a class="col-sm-9">
-                <a class="field">
-                  <%= form.text_field :password %>
-                </a>
-              </a>
-            </div>
-            <div class="form-group">
-              <label for="email" class="col-sm-3 control-label upperlabel">Email*: </label>
-              <a class="col-sm-9">
-                <a class="field">
-                  <%= form.text_field :email_address %>
-                </a>
-              </a>
-            </div>
-            <div class="form-group">
-              <label for="Country" class="col-sm-3 control-label upperlabel">Country*:</label>
+              <label for="Country" class="col-sm-3 control-label upperlabel">Country:</label>
               <a class="col-sm-9">
                 <a class="field">
                   <%= form.text_field :country %>
@@ -66,26 +42,23 @@
               </a>
             </div>
             <div class="form-group">
-              <label for="City" class="col-sm-3 control-label upperlabel">City*:</label>
+              <label for="City" class="col-sm-3 control-label upperlabel">City:</label>
               <a class="col-sm-9">
                 <a class="field">
                   <%= form.text_field :city %>
                 </a>
               </a>
             </div>
+            <div class="form-group">
+              <label for="user_type" class="col-sm-3 control-label upperlabel">User Type: </label>
+                <%= form.select :user_type, %w{User Admin Superadmin}, :prompt => 'Select', required: true, placeholder: 'user_type', class: 'form-control' %>
+            </div>
 
           </div>
           <div class="col-md-6 px-0">
+
             <div class="form-group">
-              <label for="user_type" class="col-sm-3 control-label upperlabel">User Type*: </label>
-              <a class="col-sm-9">
-                <a class="field">
-                  <%= form.text_field :user_type %>
-                </a>
-              </a>
-            </div>
-            <div class="form-group">
-              <label for="Biography" class="col-sm-3 control-label upperlabel">Biography*: </label>
+              <label for="Biography" class="col-sm-3 control-label upperlabel">Biographys: </label>
               <a class="col-sm-9">
                 <a class="field">
                   <%= form.text_field :bio %>

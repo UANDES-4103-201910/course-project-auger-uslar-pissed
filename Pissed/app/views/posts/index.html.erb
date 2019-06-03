@@ -1,25 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
-
-<table>
+<div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
+<table class="table table-bordered text-dark allign="center">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th>Up vote amount</th>
       <th>Down vote amount</th>
       <th>Date</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>Gps location</th>
-      <th>Image</th>
-      <th>File atachment</th>
       <th>Open</th>
       <th>Solved</th>
-      <th>Innapropiated count</th>
-      <th>In dumpster</th>
-      <th>Is hidden</th>
       <th>User</th>
       <th>Zone</th>
       <th colspan="3"></th>
@@ -27,23 +18,15 @@
   </thead>
 
   <tbody>
+    <% if current_user.user_type == "Admin" || current_user.user_type == "Superadmin" %>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.description %></td>
         <td><%= post.up_vote_amount %></td>
         <td><%= post.down_vote_amount %></td>
         <td><%= post.date %></td>
-        <td><%= post.city %></td>
-        <td><%= post.country %></td>
-        <td><%= post.gps_location %></td>
-        <td><%= post.image %></td>
-        <td><%= post.file_atachment %></td>
         <td><%= post.open %></td>
         <td><%= post.solved %></td>
-        <td><%= post.innapropiated_count %></td>
-        <td><%= post.in_dumpster %></td>
-        <td><%= post.is_hidden %></td>
         <td><%= post.user %></td>
         <td><%= post.zone %></td>
         <td><%= link_to 'Show', post %></td>
@@ -51,8 +34,26 @@
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <% else %>
+    <% current_user.posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.up_vote_amount %></td>
+        <td><%= post.down_vote_amount %></td>
+        <td><%= post.date %></td>
+        <td><%= post.open %></td>
+        <td><%= post.solved %></td>
+        <td><%= post.user %></td>
+        <td><%= post.zone %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

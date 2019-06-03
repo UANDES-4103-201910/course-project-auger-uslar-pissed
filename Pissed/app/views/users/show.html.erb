@@ -1,12 +1,17 @@
 <div class="row">
         <div class="col-md-4  order-md-1 mb-4 px-0">
           <h2 class="display-6 font-italic"><%= @user.name %></h2>
-	  		<img src="<%=@user.picture%>" class="img-thumbnail" width="300" height="300">
+
+          <% if @user.avatar.attached? %>
+          <image src="<%=(url_for(@user.avatar))%>" class="img-thumbnail" width="300" height="300">
+            <% else %>
+	  		<img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
+        <%end%>
         </div>
 	<div class="col-md-4 order-md-2 px-0">
 <br>
  <p class="lead my-4"> Name:  <%= @user.name %> <%= @user.lastname %> </p>
- <p class="lead my-4"> Email:  <%= @user.email_address %> </p>
+ <p class="lead my-4"> Email:  <%= @user.email %> </p>
  <p class="lead my-4"> Class: <%= @user.user_type %></p>
  <p class="lead my-4"> City: <%= @user.city %> </p>
  <p class="lead my-4"> Country: <%= @user.country %> </p>
@@ -16,14 +21,15 @@
         <div class="col-md-4 order-md-3 px-0">
 	<br>
 	<p class="lead my-4"> Biography</p>
-	<div class="jumbotron p-4 p-md-3 text-dark rounded bg-ligth">
+	<div class="jumbotron p-4 p-md-3 text-dark rounded bg-ligth" class:"container">
+
 	<p class="lead my-3" text-dark > <%= @user.bio %> </p>
         </div>
 </div>
 </div>
 	<p class="lead my-4">Activity</p>
 	<div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
-	<table class="table table-bordered text-dark allign="center">
+	<table class="table table-bordered text-dark allign=center">
 <thead>
       <tr>
         <th>Date</th>
@@ -35,12 +41,12 @@
       <tr>
         <td>02/06/2018</td>
         <td>Comment</td>
-        <td>He said he loves more weed than his new girlfriend</td>
+        <td>He said he loves more his girlfriend than anything </td>
       </tr>
       <tr>
         <td>03/06/2018</td>
         <td>Response</td>
-        <td>Weed is the best thing in the world</td>
+        <td>you are so </td>
       </tr>
       <tr>
         <td>20/05/2019</td>
@@ -73,7 +79,7 @@
 
 <p>
   <strong>Email address:</strong>
-  <%= @user.email_address %>
+  <%= @user.email %>
 </p>
 
 <p>
