@@ -2,8 +2,30 @@
   <div class="jumbotron">
     <div class="text-center">
       <h2>Dumpster</h2>
-    </div>
-    <br>
+  </div>
+
+  <% if current_user.user_type == "User" || current_user.user_type == "Superadmin" %>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.up_vote_amount %></td>
+    <td><%= post.down_vote_amount %></td>
+    <td><%= post.date %></td>
+    <td><%= post.open %></td>
+    <td><%= post.solved %></td>
+    <td><%= post.user %></td>
+    <td><%= post.zone %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+<% else %>
+<% end %>
+
+
+
+  <!--  <br>
     <br>
     <div class="row">
       <div class="col-md-6 px-5">
@@ -65,6 +87,7 @@
 
     </div>
   </div>
+  -->
 
   </form> <!-- /form -->
 </div> <!-- ./container -->

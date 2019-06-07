@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   has_many :innappropiate_requests
   has_one_attached :avatar
 
+  scope :innappropiate_requests, ->(innappropiate_requests) {where innappropiate_requests: innappropiate_requests}
   validates :title, format: {with: /\A[a-zA-Z]+\z/}, length: {in: 5..60}
   validates :description, length: {in: 15..400}
   validates :city, format: {with: /\A[a-zA-Z]+\z/}
