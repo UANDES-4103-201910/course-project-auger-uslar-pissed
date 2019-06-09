@@ -4,6 +4,8 @@ class Comment < ApplicationRecord
   has_many :votes
   acts_as_likeable
 
-  validates :body, length:{20..500}
-  validates :body, presence: true
+  validates :description, length:{in: 20..500}
+  validates :description, presence: true
+
+
 end
