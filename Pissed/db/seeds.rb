@@ -19,7 +19,7 @@ usuario1 = User.create(user_type: "SuperAdmin",name:"Jaime",lastname:"Auger",ema
 
 usuario2 = User.create(user_type: "SuperAdmin" ,name:"Cristobal",lastname:"Uslar",email_address:"cuslar@miuandes.com",password:"uslar2121",picture: "/appimages/God.jpg",
             bio:"soy uslar y y me gusta one piece, los paseos largos por la playa y las puestas de sol", gps_location: 2,city:"santiago",country:"Chile",
-            in_blacklist: false,suspended:false,previously_suspension:0,zone_id: zone1.id)
+            in_blacklist: true,suspended:false,previously_suspension:0,zone_id: zone1.id)
 
 post1 = Post.create(title:"Negligencia",description:"Fui mal atendido y mucho tiempo de espera en el registro civil, pesimo servicio ",
             up_vote_amount:2,down_vote_amount: 10,date: DateTime.now,city: "Santiago",country: "Chile",gps_location: 1,
@@ -28,5 +28,5 @@ post1 = Post.create(title:"Negligencia",description:"Fui mal atendido y mucho ti
 
 post2 = Post.create(title:"Agujero",description:"Hay un hoyo en el pavimento con el que continuamente se golpean los autos, no se ha dicho nada de un posible arreglo",
             up_vote_amount:5,down_vote_amount: 2,date: DateTime.now,city: "Santiago",country: "Chile",gps_location: 1,
-            image: "/appimages/edificio.jpeg",file_atachment: "",open:true,solved: false,innapropiated_count:0,in_dumpster: false,
+            image: "/appimages/edificio.jpeg",file_atachment: "",open:true,solved: false,innapropiated_count:0,in_dumpster: true,
             is_hidden: false,user_id: usuario2.id,zone_id: zone1.id)

@@ -6,10 +6,10 @@
           <% if @post.avatar.attached? %>
           <image src="<%=(url_for(@post.avatar))%>" class="img-thumbnail" width="300" height="300">
             <% else %>
-	  		<img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
-        <%end%>
+	  		  <img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
+          <%end%>
         <br>
-        <p class="lead my-2"> Zone: <%= @post.zone.name %></p>
+          <p class="lead my-2"> Zone: <%= @post.zone.name %></p>
         </div>
 	<div class="col-md-6 px-0">
     <br>
