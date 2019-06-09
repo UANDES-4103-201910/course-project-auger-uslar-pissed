@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_25_193515) do
+ActiveRecord::Schema.define(version: 2019_06_08_222710) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 2019_05_25_193515) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.string "follower_type"
+    t.integer "follower_id"
+    t.string "followable_type"
+    t.integer "followable_id"
+    t.datetime "created_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables"
+    t.index ["follower_id", "follower_type"], name: "fk_follows"
+  end
+
   create_table "innappropiate_requests", force: :cascade do |t|
     t.date "date"
     t.string "title"
@@ -64,6 +74,26 @@ ActiveRecord::Schema.define(version: 2019_05_25_193515) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_innappropiate_requests_on_post_id"
     t.index ["user_id"], name: "index_innappropiate_requests_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.string "liker_type"
+    t.integer "liker_id"
+    t.string "likeable_type"
+    t.integer "likeable_id"
+    t.datetime "created_at"
+    t.index ["likeable_id", "likeable_type"], name: "fk_likeables"
+    t.index ["liker_id", "liker_type"], name: "fk_likes"
+  end
+
+  create_table "mentions", force: :cascade do |t|
+    t.string "mentioner_type"
+    t.integer "mentioner_id"
+    t.string "mentionable_type"
+    t.integer "mentionable_id"
+    t.datetime "created_at"
+    t.index ["mentionable_id", "mentionable_type"], name: "fk_mentionables"
+    t.index ["mentioner_id", "mentioner_type"], name: "fk_mentions"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -94,7 +124,7 @@ ActiveRecord::Schema.define(version: 2019_05_25_193515) do
     t.string "user_type"
     t.string "name"
     t.string "lastname"
-    t.string "email", default: "", null: false
+    t.string "email_address"
     t.string "password"
     t.string "picture"
     t.text "bio"
@@ -107,11 +137,12 @@ ActiveRecord::Schema.define(version: 2019_05_25_193515) do
     t.integer "zone_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["zone_id"], name: "index_users_on_zone_id"
   end

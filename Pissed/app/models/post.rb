@@ -7,6 +7,8 @@ class Post < ApplicationRecord
   has_many :innappropiate_requests
   # has_many :requests, through: :innappropiate_requests
   has_one_attached :avatar
+  acts_as_followable
+  acts_as_likeable
 
   scope :innappropiate_requests, ->(innappropiate_requests) {where innappropiate_requests: innappropiate_requests}
   validates :title, format: {with: /\A[a-zA-Z]+\z/}, length: {in: 5..60}

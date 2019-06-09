@@ -12,6 +12,9 @@ class User < ApplicationRecord
   # has_many :request_posts, through: :innappropiate_requests
   has_many :innappropiate_requests
   has_one_attached :avatar
+  acts_as_follower
+  acts_as_liker
+  acts_as_mentionable
 
   validates :name, format: {with: /\A[a-zA-Z]+\z/}
   validates :lastname, format: {with: /\A[a-zA-Z]+\z/}

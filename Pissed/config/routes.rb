@@ -25,7 +25,13 @@ Rails.application.routes.draw do
   resources :votes
   resources :users
   resources :comments
-  resources :posts
+  resources :posts do
+    resources :comments
+    member do
+      post :like
+      post :follow
+    end
+  end
   resources :zones
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

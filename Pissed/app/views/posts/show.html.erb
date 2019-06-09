@@ -6,10 +6,10 @@
           <% if @post.avatar.attached? %>
           <image src="<%=(url_for(@post.avatar))%>" class="img-thumbnail" width="300" height="300">
             <% else %>
-	  		<img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
-        <%end%>
+	  		  <img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
+          <%end%>
         <br>
-        <p class="lead my-2"> Zone ID: <%= @post.zone %></p>
+          <p class="lead my-2"> Zone: <%= @post.zone.name %></p>
         </div>
 	<div class="col-md-6 px-0">
     <br>
@@ -24,8 +24,9 @@
       </div>
     <br>
     <div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
-  	<table class="table table-bordered text-dark allign="center">
+  	<table class="table table-bordered text-dark allign='center'" >
   <thead>
+
         <tr>
           <th>Date</th>
           <th>User</th>
@@ -33,31 +34,37 @@
         </tr>
       </thead>
       <tbody>
+      <% @comments.each do |comment| %>
         <tr>
-          <td>10/05/2019</td>
-          <td>Jaime Auger</td>
-          <td>La imagen se ve perfectamente</td>
+          <td> <%=comment.created_at %> </td>
+          <td> <%=comment.user.name %> </td>
+          <td> <%=comment.body %> </td>
         </tr>
-        <tr>
-          <td>10/05/2019</td>
-          <td>Cristobal Uslar</td>
-          <td>Gracias jaime, es lo que queria</td>
-        </tr>
-        <tr>
-          <td>10/05/2019</td>
-          <td>Paz Torres</td>
-          <td>Mi pagina es mejor</td>
-        </tr>
+      <% end %>
       </tbody>
-    </table>
-  </div>
+  </table>
   <br>
-  <p class="lead my-4">This post is open to comentaries: </p>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  <div class="text-right">
-    <br>
-    <button type="submit"  class="btn btn-primary btn-sm upperlabel">Enviar comentario</button>
+  <div>
+    <div class="form-group">
+      <label for="title" class="col-sm-3 control-label upperlabel">New Comment</label>
+      <a class="col-sm-9">
+        <a class="field">
+          <%= form_for([@post,@comment]) do |f| %>
+            <%= f.text_field :description %>
+            <a class="actions text-center">
+                <%= f.submit %>
+            </a>
+          <% end %>
+        </a>
+      </a>
+    </div>
+
+
+
   </div>
+  </div>
+
+
 <!--
 <p>
   <strong>Title:</strong>
