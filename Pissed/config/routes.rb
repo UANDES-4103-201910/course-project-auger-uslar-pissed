@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get 'search/author'
-  get 'search/post'
+  get 'search/author' , to: 'search#author'
+  get 'search/post' , to: 'search#post'
   get 'black_list/main'
   get 'black_list/recover'
   get 'black_list/delete'

@@ -63,10 +63,7 @@
         </li>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <% form_tag(search_by_author_path, method: :get) do %>
-          <%= text_field_tag(:search, params:[:search]) %>
-          <%= submit_tag ("Search") %>
-          <% end %>
+          <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
 
         </form>
   </nav>
@@ -85,11 +82,6 @@
           <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="../posts/new">New Post</a>
-            <% if @user.posts.empty? %>
-            <br>
-            <% else %>
-            <a class="dropdown-item" <%= link_to "Newest Post" , post_path(@user.posts.last)%></a>
-            <% end %>
             <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
             <a class="dropdown-item" href="#">Delete a Post</a>
           </div>
@@ -101,10 +93,12 @@
             <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
           </div>
           </li>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
-
+          <form class="form-inline my-2 my-lg-0" action="/search/author">
+            <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search" >
+            <button class="btn btn-primary btn-sm upperlabel" type="submit">Search author</button>
+            <form class="form-inline my-2 my-lg-0" action="/search/post">
+              <button class="btn btn-primary btn-sm upperlabel" type="submit">Search post</button>
+            </form>
           </form>
     </nav>
 
@@ -145,7 +139,6 @@
           </div>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" <%= link_to @user.posts.last.title , post_path(@user.posts.last)%></a>
           <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
           <a class="dropdown-item" href="#">Delete a Post</a>
         </div>
