@@ -25,30 +25,37 @@
     <br>
     <div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
   	<table class="table table-bordered text-dark allign='center'" >
-  <thead>
-
+  <thead class="container-fluid">
         <tr>
-          <th>Date</th>
-          <th>User</th>
-          <th>Comment</th>
+          <th>Comments:</th>
         </tr>
       </thead>
       <tbody>
-      <% @comments.each do |comment| %>
-        <tr>
-          <td> <%=comment.created_at %> </td>
-          <td> <%=comment.user.name %> </td>
-          <td> <%=comment.body %> </td>
-        </tr>
-      <% end %>
       </tbody>
-  </table>
+    </table>
+      <% @comments.each do |comment| %>
+
+          <div class="container">
+            <p class="col-4">
+            <%=comment.user.name %> : <%=comment.description %>
+            </p>
+          </div>
+        <% @comment.comments.each do |reply| %>
+          <div class="container">
+            <p class="col-4" style="margin-left: <%= comment_distance(reply,0)%>rem">
+
+              <%=comment.user.name %> : <%=comment.description %>
+            </p>
+          </div>
+        <%end%>
+
+      <% end %>
   <br>
   <div>
     <div class="form-group">
-      <label for="title" class="col-sm-3 control-label upperlabel">New Comment</label>
+      <label for="title" class="col-sm-3 control-label upperlabel">New Comment:</label>
       <a class="col-sm-9">
-        <a class="field">
+        <a class="field justify-content-end">
           <%= form_for([@post,@comment]) do |f| %>
             <%= f.text_field :description %>
             <a class="actions text-center">
