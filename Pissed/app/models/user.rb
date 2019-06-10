@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :votes
+  # has_many :request_posts, through: :innappropiate_requests
   has_many :innappropiate_requests
   has_one_attached :avatar
   acts_as_follower

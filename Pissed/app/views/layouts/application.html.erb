@@ -53,10 +53,8 @@
           <a class="dropdown-item" href="../posts/new">New Post</a>
           <a class="dropdown-item" href="../posts/3">View Newest Post</a>
           <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
-          <a class="dropdown-item" href="#">Delete a Post</a>
         </div>
         </li>
-        <li><a class="nav-link" href="#">Comment Threads</a></li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
         <div class="dropdown-menu" aria-labelledby="dropdown03">
           <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
@@ -84,7 +82,6 @@
           <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="../posts/new">New Post</a>
-            <a class="dropdown-item" href="../posts/3">View Newest Post</a>
             <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
             <a class="dropdown-item" href="#">Delete a Post</a>
           </div>
@@ -96,10 +93,12 @@
             <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
           </div>
           </li>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
-
+          <form class="form-inline my-2 my-lg-0" action="/search/author">
+            <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search" >
+            <button class="btn btn-primary btn-sm upperlabel" type="submit">Search author</button>
+            <form class="form-inline my-2 my-lg-0" action="/search/post">
+              <button class="btn btn-primary btn-sm upperlabel" type="submit">Search post</button>
+            </form>
           </form>
     </nav>
 
@@ -114,16 +113,14 @@
         </li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="../posts/new">New Post</a>
-          <a class="dropdown-item" href="../posts/3">View Newest Post</a>
+          <a class="dropdown-item" <%= link_to "New Post", new_post_path %></a>
+          <a class="dropdown-item" <%= link_to @user.posts.last.title , post_path(@user.posts.last)%></a>
           <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
-          <a class="dropdown-item" href="#">Delete a Post</a>
         </div>
         </li>
-        <li><a class="nav-link" href="#">Comment Threads</a></li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
         <div class="dropdown-menu" aria-labelledby="dropdown03">
-          <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
+          <a class="dropdown-item" <%= link_to "Provide AUP and TOS document", policyandservices_documents_path %></a>
           <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
         </div>
         </li>
@@ -142,7 +139,6 @@
           </div>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="../posts/3">View Newest Post</a>
           <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
           <a class="dropdown-item" href="#">Delete a Post</a>
         </div>

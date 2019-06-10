@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   has_many :votes
   has_many :comments
   has_many :innappropiate_requests
+  # has_many :requests, through: :innappropiate_requests
   has_one_attached :avatar
   acts_as_followable
   acts_as_likeable
