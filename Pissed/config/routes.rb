@@ -23,7 +23,12 @@ Rails.application.routes.draw do
   resources :admin_zones
   resources :innappropiate_requests
   resources :votes
-  resources :users
+  resources :users do
+    member do
+      get 'blacklist'
+      put 'blacklist'
+    end
+  end
   resources :comments
   resources :posts do
     resources :comments

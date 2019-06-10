@@ -1,5 +1,6 @@
 class BlackListController < ApplicationController
   def main
+    @users = User.where(:in_blacklist => true)
   end
 
   def recover

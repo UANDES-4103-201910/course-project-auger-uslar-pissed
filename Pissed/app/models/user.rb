@@ -26,4 +26,7 @@ class User < ApplicationRecord
  after_initialize do
    self.user_type ||= "User"
  end
+
+ def to_blacklist
+end
 end

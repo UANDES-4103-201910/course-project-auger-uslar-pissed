@@ -1,53 +1,46 @@
 <div class="container">
   <div class="jumbotron">
     <div class="text-center">
-      <h2>User Black List</h2>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-md-8 px-4">
-        <label for="search by author" class="col-sm-6 control-label upperlabel">Search by author:</label>
-        <select class="form-control" data-live-search="true">
-          <option data-tokens="Jaime Auger">Jaime Auger</option>
-          <option data-tokens="Samuel Villaseca">Samuel Villaseca</option>
-          <option data-tokens="Cristobal Uslar">Cristobal Uslar</option>
-          <option data-tokens="Ignacio Jaque">Ignacio Jaque</option>
-          <option data-tokens="Martin Farr">Martin Farr</option>
-          <option data-tokens="Ignacio Esterio">Ignacio Esterio</option>
-        </select>
-        <div class="text-right">
-          <button type="submit"  class="btn btn-primary btn-sm upperlabel">Search</button>
-        </div>
-      </div>
-      <div class="col-md-4 px-6">
-        <br>
-        <br>
-        <a href="../black_list/recover"  class="btn btn-success btn-sm upperlabel" role="button" >Recover</a>    <a href="../black_list/delete"  class="btn btn-danger btn-sm upperlabel" role="button" >Delete</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 px-4">
-    <br>
-    <select class="form-control">
-      <option>Jaime Auger Malo</option>
-      <option>Samuel Villaseca Malo</option>
-      <option>Cristobal Uslar Malo</option>
-      <option>Ignacio Jaque</option>
-      <option>Martin Farr</option>
-      <option>Ignacio Esterio</option>
-    </select>
-      </div>
-
-      <div class="col-md-4 px-2">
-        <br>
-        <a href="../black_list/recover"  class="btn btn-success btn-sm upperlabel" role="button" >Recover</a>    <a href="../black_list/delete"  class="btn btn-danger btn-sm upperlabel" role="button" >Delete</a>
-      </div>
-
+      <h2>Dumpster</h2>
   </div>
+  <div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
+  <table class="table table-bordered text-dark allign="center">
+    <thead>
+      <tr>
+        <th>User type</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Email address</th>
+        <th>In blacklist</th>
+        <th>Suspended</th>
+        <th>Previously suspension</th>
+        <th>Zone</th>
+        <th> Actions </th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+<tbody>
+  <% if current_user.user_type == "Admin" || current_user.user_type == "Superadmin" %>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.user_type %></td>
+    <td><%= user.name %></td>
+    <td><%= user.lastname %></td>
+    <td><%= user.email %></td>
+    <td><%= user.in_blacklist %></td>
+    <td><%= user.suspended %></td>
+    <td><%= user.previously_suspension %></td>
+    <td><%= user.zone.name %></td>
+    <td><%= link_to 'Show', user %>
+    <%= link_to 'Edit', edit_user_path(user) %>
+    <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </tr>
+<% end %>
+<% else %>
+<% end %>
+</tbody>
+</table>
 </div>
 
-</form> <!-- /form -->
-</div> <!-- ./container -->
-
-<p>Find me in app/views/black_list/main.html.erb</p>
+</div>
