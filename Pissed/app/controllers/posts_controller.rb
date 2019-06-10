@@ -10,13 +10,21 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = @post.comments
+    @comments = @post.comments.where(comment:nil)
     @comment = Comment.new
+
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+  end
+
+  def comment_distance(comment,n)
+    if comment.comment.comment.nil?
+      return n
+    end
+    return comment_distance(comment.comment.comment,n+1)
   end
 
   # GET /posts/1/edit
