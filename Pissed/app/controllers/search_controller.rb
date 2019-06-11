@@ -6,7 +6,6 @@ class SearchController < ApplicationController
   end
 
   def post
-    @posts = Post.where("title LIKE ?", "%" + params[:q] + "%")
   end
 
 end
