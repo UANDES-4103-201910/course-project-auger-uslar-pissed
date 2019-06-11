@@ -1,6 +1,6 @@
 <div class="row">
         <div class="col-md-4  order-md-1 mb-4 px-0">
-          <h2 class="display-6 font-italic"><%= @user.name %></h2>
+          <h2 class="display-6 font-italic text-light" ><%= @user.name %></h2>
 
           <% if @user.avatar.attached? %>
           <image src="<%=(url_for(@user.avatar))%>" class="img-thumbnail" width="300" height="300">

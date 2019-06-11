@@ -52,8 +52,8 @@
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" <%= link_to "View Posts", posts_path %></a>
           <a class="dropdown-item" <%= link_to "New Post", new_post_path %></a>
-          <a class="dropdown-item" href="../posts/3">View Newest Post</a>
-          <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
+          <a class="dropdown-item" <%= link_to "View Newest Post", post_path(current_user.posts.last) %></a>
+          <a class="dropdown-item" <%= link_to "View Oldest Post", post_path(current_user.posts.first) %></a>
         </div>
         </li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
@@ -62,11 +62,10 @@
           <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
         </div>
         </li>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
-
-        </form>
+        <form class="form-inline my-2 my-lg-0" action="/search/author">
+          <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search" >
+          <button class="btn btn-primary btn-sm upperlabel" type="submit">Search</button>
+          </form>
   </nav>
           <% elsif current_user.user_type == "Superadmin" %>
           <nav class="nav d-flex justify-content-between container">
@@ -97,11 +96,8 @@
           </li>
           <form class="form-inline my-2 my-lg-0" action="/search/author">
             <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search" >
-            <button class="btn btn-primary btn-sm upperlabel" type="submit">Search author</button>
-            <form class="form-inline my-2 my-lg-0" action="/search/post">
-              <button class="btn btn-primary btn-sm upperlabel" type="submit">Search post</button>
+            <button class="btn btn-primary btn-sm upperlabel" type="submit">Search</button>
             </form>
-          </form>
     </nav>
 
           <% else %>
@@ -116,7 +112,8 @@
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" <%= link_to "New Post", new_post_path %></a>
-          <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
+          <a class="dropdown-item" <%= link_to "View Newest Post", post_path(current_user.posts.last) %></a>
+          <a class="dropdown-item" <%= link_to "View Oldest Post", post_path(current_user.posts.first) %></a>
         </div>
         </li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
@@ -125,11 +122,10 @@
           <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
         </div>
         </li>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
-
-        </form>
+        <form class="form-inline my-2 my-lg-0" action="/search/author">
+          <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search" >
+          <button class="btn btn-primary btn-sm upperlabel" type="submit">Search</button>
+          </form>
   </nav>
           <% end %>
 
@@ -140,8 +136,8 @@
           </div>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
-          <a class="dropdown-item" href="../posts/4">View Newest Post</a>
+
+
         </div>
         </li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
@@ -150,11 +146,10 @@
           <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
         </div>
         </li>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <a href="../search/author"  class="btn btn-primary btn-sm upperlabel" role="button" >By author</a> &nbsp;&nbsp;  <a href="../search/post"  class="btn btn-primary btn-sm upperlabel" role="button" >By post</a>
-
-        </form>
+        <form class="form-inline my-2 my-lg-0" action="/search/author">
+          <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search" >
+          <button class="btn btn-primary btn-sm upperlabel" type="submit">Search</button>
+          </form>
       </nav>
 
           <% end %>
