@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @comments = @user.comments
+    @comment = @user.comments
     @posts = @user.posts
 
   end

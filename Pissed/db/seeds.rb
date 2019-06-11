@@ -16,8 +16,8 @@ zone4 = Zone.create(name: "Oeste")
 usuario1 = User.create(user_type: "SuperAdmin",name:"Jaime",lastname:"Auger",email:"jiauger@miuandes.com", password:"jaime7777",password_confirmation: "jaime7777",picture: "/appimages/auger.jpg", bio:"soy jaime y me gusta sacarle los sticker a las bebidas de guarana", gps_location: 2,city:"santiago",country:"Chile", in_blacklist: false, suspended:false,previously_suspension:0,zone_id: zone1.id)
 
 usuario2 = User.create(user_type: "SuperAdmin" ,name:"Cristobal",lastname:"Uslar",email:"cuslar@miuandes.com",password:"uslar2121", password_confirmation: "uslar2121",picture: "/appimages/God.jpg",
-            bio:"soy uslar y y me gusta one piece, los paseos largos por la playa y las puestas de sol", gps_location: 2,city:"santiago",country:"Chile",
-            in_blacklist: true,suspended:false,previously_suspension:0,zone_id: zone1.id)
+            bio:"soy uslar y y me gusta one piece, los paseos largos por la playa y las puestas de sol", gps_location: 1,city:"santiago",country:"Chile",
+            in_blacklist: false,suspended:false,previously_suspension:0,zone_id: zone1.id)
 
 post1 = Post.create(title:"Negligencia",description:"Fui mal atendido y mucho tiempo de espera en el registro civil, pesimo servicio ",
             up_vote_amount:0,down_vote_amount: 0,date: DateTime.now,city: "Santiago",country: "Chile",gps_location: 1,
@@ -33,3 +33,11 @@ post3 = Post.create(title:"Alegato",description:"Existe negligencia en el servic
                     up_vote_amount: 0,down_vote_amount: 0,date: DateTime.now, city: "Santiago",country: "Chile",gps_location: 1,
                     image: "/appimages/edificio.jpeg",file_atachment: "", open:true, solved: false, innapropiated_count:0, in_dumpster: false,
                     is_hidden: false,user_id: usuario2.id,zone_id: zone1.id)
+
+comment1= Comment.create(description: "Oh such a great post", up_vote_amount: 0, down_vote_amount: 0, user: usuario1.id, post: post1.id, comment:nil)
+
+comment2= Comment.create(description: "Oh such a terrible situation", up_vote_amount: 0, down_vote_amount: 0, user: usuario1.id, post: post1.id, comment:nil)
+
+comment3= Comment.create(description: "Oh thats a big problem", up_vote_amount: 0, down_vote_amount: 0, user: usuario2.id, post: post3.id, comment:nil)
+
+comment4= Comment.create(description: "I was going to write the same thing", up_vote_amount: 0, down_vote_amount: 0, user: usuario2.id, post: post3.id, comment:nil)

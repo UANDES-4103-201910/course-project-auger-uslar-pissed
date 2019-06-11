@@ -56,7 +56,7 @@
     </tr>
     </thead>
 
-  <% @comments.each do |comment| %>
+    <% @comment.each do |comment| %>
 
       <td>
         Post's title:  <strong><%=comment.post.title %></strong>
@@ -64,9 +64,10 @@
       <td>
         Description:    <strong><%=comment.description %></strong>
       </td>
+      <td>
         Date:    <strong><%=comment.date %></strong>
-      </p>
-  <% end %>
+      </td>
+    <% end %>
   </table>
 
 </div>
