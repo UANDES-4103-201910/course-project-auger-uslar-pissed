@@ -57,7 +57,7 @@
     </thead>
 
     <% @comment.each do |comment| %>
-
+      <tr>
       <td>
         Post's title:  <strong><%=comment.post.title %></strong>
       </td>
@@ -65,8 +65,9 @@
         Description:    <strong><%=comment.description %></strong>
       </td>
       <td>
-        Date:    <strong><%=comment.date %></strong>
+        Date:    <strong><%=comment.created_at %></strong>
       </td>
+      </tr>
     <% end %>
   </table>
 
