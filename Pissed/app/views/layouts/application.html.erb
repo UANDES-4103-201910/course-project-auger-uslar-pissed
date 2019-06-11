@@ -50,14 +50,15 @@
         </li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="../posts/new">New Post</a>
+          <a class="dropdown-item" <%= link_to "View Posts", posts_path %></a>
+          <a class="dropdown-item" <%= link_to "New Post", new_post_path %></a>
           <a class="dropdown-item" href="../posts/3">View Newest Post</a>
           <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
         </div>
         </li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
         <div class="dropdown-menu" aria-labelledby="dropdown03">
-          <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
+          <a class="dropdown-item" <%= link_to "Provide AUP and TOS document", policyandservices_documents_path %></a>
           <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
         </div>
         </li>
@@ -81,15 +82,16 @@
           </li>
           <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="../posts/new">New Post</a>
-            <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
-            <a class="dropdown-item" href="#">Delete a Post</a>
+            <a class="dropdown-item" <%= link_to "View Dumpster", dumpster_main_path %></a>
+            <a class="dropdown-item" <%= link_to "View Posts", posts_path %></a>
+            <a class="dropdown-item" <%= link_to "New Post", new_post_path %></a>
+            <a class="dropdown-item" <%= link_to "View Newest Post", post_path(current_user.posts.last) %></a>
+            <a class="dropdown-item" <%= link_to "View Oldest Post", post_path(current_user.posts.first) %></a>
           </div>
           </li>
-          <li><a class="nav-link" href="#">Comment Threads</a></li>
           <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
           <div class="dropdown-menu" aria-labelledby="dropdown03">
-            <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
+            <a class="dropdown-item" <%= link_to "Provide AUP and TOS document", policyandservices_documents_path %></a>
             <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
           </div>
           </li>
@@ -139,13 +141,12 @@
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Posts</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="../posts/4">View Oldest Post</a>
-          <a class="dropdown-item" href="#">Delete a Post</a>
+          <a class="dropdown-item" href="../posts/4">View Newest Post</a>
         </div>
         </li>
-        <li><a class="nav-link" href="#">Comment Threads</a></li>
         <li><a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUP &amp; TOS</a>
         <div class="dropdown-menu" aria-labelledby="dropdown03">
-          <a class="dropdown-item" href="../policyandservices/documents">Provide AUP and TOS document</a>
+          <a class="dropdown-item" <%= link_to "Provide AUP and TOS document", policyandservices_documents_path %></a>
           <a class="dropdown-item" href="../policyandservices/abusivecontent">Report abussive content</a>
         </div>
         </li>

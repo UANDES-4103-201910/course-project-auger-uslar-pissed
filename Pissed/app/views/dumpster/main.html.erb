@@ -30,7 +30,7 @@
     <td><%= post.open %></td>
     <td><%= post.solved %></td>
     <td><%= post.user.name %> <%= post.user.lastname %> </td>
-    <td><%= post.zone.name %></td>
+    <td><%= post.zone.name %> </td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %></td>

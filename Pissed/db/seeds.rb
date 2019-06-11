@@ -13,6 +13,7 @@ zone3 = Zone.create(name: "Este")
 
 zone4 = Zone.create(name: "Oeste")
 
+
 user1 = User.create(user_type: "SuperAdmin",name:"Jaime",lastname:"Auger",email:"jiauger@miuandes.com", password:"jaime7777",password_confirmation: "jaime7777",picture: "/appimages/auger.jpg",
                     bio:"soy jaime y me gusta sacarle los sticker a las bebidas de guarana", gps_location: 1,city:"santiago",country:"Chile",
                     in_blacklist: false, suspended:false,previously_suspension:0,zone_id: zone1.id)
@@ -42,4 +43,6 @@ comment2= Comment.create(description: "Oh such a terrible situation", up_vote_am
 
 comment3= Comment.create(description: "Oh thats a big problem", up_vote_amount: 0, down_vote_amount: 0, user: user2, post: post3, comment:nil)
 
+
 comment4= Comment.create(description: "I was going to write the same thing", up_vote_amount: 0, down_vote_amount: 0, user: user2, post: post3, comment:nil)
+

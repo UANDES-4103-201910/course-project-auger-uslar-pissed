@@ -56,7 +56,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attribute(:in_blacklist, true)
     redirect_to users_path
+  end
 
+  def blacklistout
+    @user = User.find(params[:id])
+    @user.update_attribute(:in_blacklist, false)
+    redirect_to users_path
   end
 
   # DELETE /users/1

@@ -1,9 +1,10 @@
 <div class="container">
   <div class="jumbotron">
-    <div class="text-center">
-      <h2>Dumpster</h2>
-  </div>
   <div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
+    <div class="text-center">
+      <h2>Users in Blacklist</h2>
+      <br>
+  </div>
   <table class="table table-bordered text-dark allign="center">
     <thead>
       <tr>
@@ -11,7 +12,6 @@
         <th>Name</th>
         <th>Lastname</th>
         <th>Email address</th>
-        <th>In blacklist</th>
         <th>Suspended</th>
         <th>Previously suspension</th>
         <th>Zone</th>
@@ -28,7 +28,6 @@
     <td><%= user.name %></td>
     <td><%= user.lastname %></td>
     <td><%= user.email %></td>
-    <td><%= user.in_blacklist %></td>
     <td><%= user.suspended %></td>
     <td><%= user.previously_suspension %></td>
     <td><%= user.zone.name %></td>

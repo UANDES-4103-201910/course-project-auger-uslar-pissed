@@ -27,10 +27,19 @@ Rails.application.routes.draw do
     member do
       get 'blacklist'
       put 'blacklist'
+      get 'blacklistout'
+      put 'blacklistout'
     end
   end
   resources :comments
   resources :posts do
+    member do
+        get 'dumpster'
+        put 'dumpster'
+        get 'dumpsterout'
+        put 'dumpsterout'
+        get 'last_post'
+    end
     resources :comments
     member do
       post :like

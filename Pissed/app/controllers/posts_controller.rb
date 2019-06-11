@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   def show
     @comments = @post.comments.where(comment:nil)
     @comment = Comment.new
-
   end
 
   # GET /posts/new
@@ -35,6 +34,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
@@ -60,7 +60,21 @@ class PostsController < ApplicationController
       end
     end
   end
+  def dumpster
+    @post = Post.find(params[:id])
+    @post.update_attribute(:in_dumpster, true)
+    redirect_to posts_path
+  end
 
+  def dumpsterout
+    @post = Post.find(params[:id])
+    @post.update_attribute(:in_dumpster, false)
+    redirect_to posts_path
+  end
+  def last_post
+    @latest_post = Post.order(:id).last
+    redirect_to last_post_post_path
+  end
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
