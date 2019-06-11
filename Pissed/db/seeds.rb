@@ -13,9 +13,9 @@ zone3 = Zone.create(name: "Este")
 
 zone4 = Zone.create(name: "Oeste")
 
-usuario1 = User.create(user_type: "SuperAdmin",name:"Jaime",lastname:"Auger",email:"jiauger@miuandes.com", password:"jaime7777",password_confirmation: "jaime7777",picture: "/appimages/auger.jpg", bio:"soy jaime y me gusta sacarle los sticker a las bebidas de guarana", gps_location: 2,city:"santiago",country:"Chile", in_blacklist: false, suspended:false,previously_suspension:0,zone_id: zone1.id)
+usuario1 = User.create(user_type: "Superadmin",name:"Jaime",lastname:"Auger",email:"jiauger@miuandes.com", password:"jaime7777",password_confirmation: "jaime7777",picture: "/appimages/auger.jpg", bio:"soy jaime y me gusta sacarle los sticker a las bebidas de guarana", gps_location: 2,city:"santiago",country:"Chile", in_blacklist: false, suspended:false,previously_suspension:0,zone_id: zone1.id)
 
-usuario2 = User.create(user_type: "SuperAdmin" ,name:"Cristobal",lastname:"Uslar",email:"cuslar@miuandes.com",password:"uslar2121", password_confirmation: "uslar2121",picture: "/appimages/God.jpg",
+usuario2 = User.create(user_type: "Superadmin" ,name:"Cristobal",lastname:"Uslar",email:"cuslar@miuandes.com",password:"uslar2121", password_confirmation: "uslar2121",picture: "/appimages/God.jpg",
             bio:"soy uslar y y me gusta one piece, los paseos largos por la playa y las puestas de sol", gps_location: 2,city:"santiago",country:"Chile",
             in_blacklist: true,suspended:false,previously_suspension:0,zone_id: zone1.id)
 
