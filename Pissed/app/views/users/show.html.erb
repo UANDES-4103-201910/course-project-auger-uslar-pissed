@@ -5,8 +5,8 @@
           <% if @user.avatar.attached? %>
           <image src="<%=(url_for(@user.avatar))%>" class="img-thumbnail" width="300" height="300">
             <% else %>
-	  		<img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
-        <%end%>
+	  		  <img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
+          <%end%>
         </div>
 	<div class="col-md-4 order-md-2 px-0">
 <br>
@@ -17,11 +17,11 @@
  <p class="lead my-4"> Country: <%= @user.country %> </p>
  <p class="lead my-4"> GPS Location: <%= @user.gps_location %> </p>
 
-        </div>
+  </div>
         <div class="col-md-4 order-md-3 px-0">
 	<br>
 	<p class="lead my-4"> Biography</p>
-	<div class="jumbotron p-4 p-md-3 text-dark rounded bg-ligth" class:"container">
+	<div class="jumbotron p-4 p-md-3 text-dark rounded bg-ligth container">
 
 	<p class="lead my-3" text-dark > <%= @user.bio %> </p>
         </div>
@@ -30,33 +30,47 @@
 	<p class="lead my-4">Activity</p>
 	<div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
 	<table class="table table-bordered text-dark allign=center">
-<thead>
+    <thead>
       <tr>
-        <th>Date</th>
-        <th>Activity</th>
-        <th>Details</th>
+        <th>Posts:</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>02/06/2018</td>
-        <td>Comment</td>
-        <td>He said he loves more his girlfriend than anything </td>
-      </tr>
-      <tr>
-        <td>03/06/2018</td>
-        <td>Response</td>
-        <td>you are so </td>
-      </tr>
-      <tr>
-        <td>20/05/2019</td>
-        <td>Vote</td>
-        <td>Voted positive on a comment</td>
-      </tr>
-    </tbody>
+
+    <% @posts.each do |post| %>
+      <td>
+        Title:  <strong><%=post.title %></strong>
+      </td>
+      <td>
+        Date:    <strong><%=post.date%></strong>
+      </td>
+    <% end %>
+
   </table>
 </div>
 
+<div class="jumbotron p-10 p-md-4 text-dark rounded bg-ligth">
+  <table class="table table-bordered text-dark allign=center">
+    <thead>
+    <tr>
+      <th>Comments:</th>
+    </tr>
+    </thead>
+
+    <% @comment.each do |comment| %>
+
+      <td>
+        Post's title:  <strong><%=comment.post.title %></strong>
+      </td>
+      <td>
+        Description:    <strong><%=comment.description %></strong>
+      </td>
+      <td>
+        Date:    <strong><%=comment.date %></strong>
+      </td>
+    <% end %>
+  </table>
+
+</div>
 
 <!-- Weas que estaban
 

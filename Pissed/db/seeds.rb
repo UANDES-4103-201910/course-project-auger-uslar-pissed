@@ -33,3 +33,11 @@ post3 = Post.create(title:"Alegato",description:"Existe negligencia en el servic
                     up_vote_amount: 0,down_vote_amount: 0,date: DateTime.now, city: "Santiago",country: "Chile",gps_location: 1,
                     image: "/appimages/edificio.jpeg",file_atachment: "", open:true, solved: false, innapropiated_count:0, in_dumpster: false,
                     is_hidden: false,user_id: usuario2.id,zone_id: zone1.id)
+
+comment1= Comment.create(description: "Oh such a great post", up_vote_amount: 0, down_vote_amount: 0, user: usuario1.id, post: post1.id, comment:nil)
+
+comment2= Comment.create(description: "Oh such a terrible situation", up_vote_amount: 0, down_vote_amount: 0, user: usuario1.id, post: post1.id, comment:nil)
+
+comment3= Comment.create(description: "Oh thats a big problem", up_vote_amount: 0, down_vote_amount: 0, user: usuario2.id, post: post3.id, comment:nil)
+
+comment4= Comment.create(description: "I was going to write the same thing", up_vote_amount: 0, down_vote_amount: 0, user: usuario2.id, post: post3.id, comment:nil)
