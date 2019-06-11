@@ -5,8 +5,8 @@
           <% if @user.avatar.attached? %>
           <image src="<%=(url_for(@user.avatar))%>" class="img-thumbnail" width="300" height="300">
             <% else %>
-	  		<img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
-        <%end%>
+	  		  <img src="/appimages/ProfileBlank.png" class="img-thumbnail" width="300" height="300">
+          <%end%>
         </div>
 	<div class="col-md-4 order-md-2 px-0">
 <br>
@@ -66,7 +66,6 @@
       </td>
         Date:    <strong><%=comment.date %></strong>
       </p>
-    </div>
   <% end %>
   </table>
 
